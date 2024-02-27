@@ -1,4 +1,4 @@
-import {APP_INITIALIZER, ApplicationConfig, importProvidersFrom} from '@angular/core';
+import {APP_INITIALIZER, ApplicationConfig, importProvidersFrom, isDevMode} from '@angular/core';
 import {
     provideRouter,
     withInMemoryScrolling
@@ -28,6 +28,8 @@ import {
 import {LayoutService} from "./layout/service/app.layout.service";
 import {securityConfigFactory, SecurityConfigService} from "./services/security-config.service";
 import {BASE_PATH} from "../../generated/openapi";
+import {provideTransloco} from "@ngneat/transloco";
+import {TranslocoHttpLoader} from "./services/transloco-loader";
 
 
 
@@ -119,6 +121,15 @@ export const appConfig: ApplicationConfig = {
             anchorScrolling: 'enabled',
             scrollPositionRestoration: 'enabled'
         })),
+        provideTransloco({
+            config: {
+                availableLangs: ['en','de','hu'],
+                defaultLang: 'en',
+                reRenderOnLangChange: true,
+                prodMode: !isDevMode(),
+            },
+            loader: TranslocoHttpLoader
+        }),
         provideAnimationsAsync(),
         MsalService,
         MsalGuard,

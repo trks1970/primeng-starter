@@ -5,6 +5,9 @@ import {NgClass, NgIf} from "@angular/common";
 import {MsalService} from "@azure/msal-angular";
 import {ButtonModule} from "primeng/button";
 import {TooltipModule} from "primeng/tooltip";
+import {FormsModule} from "@angular/forms";
+import {MenuItem} from "primeng/api";
+import {SplitButtonModule} from "primeng/splitbutton";
 
 @Component({
     selector: 'app-topbar',
@@ -14,16 +17,51 @@ import {TooltipModule} from "primeng/tooltip";
         NgIf,
         NgClass,
         ButtonModule,
-        TooltipModule
+        TooltipModule,
+        FormsModule,
+        SplitButtonModule
     ]
 })
 export class AppTopBarComponent{
-
+    languages!: MenuItem[];
     @ViewChild('menubutton') menuButton!: ElementRef;
     @ViewChild('topbarmenu') menu!: ElementRef;
     protected readonly environment = environment;
+
+    selectedLanguage: MenuItem
+
     constructor(protected layoutService: LayoutService,
-                private msalService: MsalService,) { }
+                private msalService: MsalService,) {
+        this.selectedLanguage = {
+                title: 'en',
+                label: "English",
+                icon: 'fi fi-gb',
+                escape: false,
+                command: () => {
+                    this.selectLanguage('en')
+                }
+            }
+
+        this.languages = [
+            this.selectedLanguage,
+            {
+                title: 'de',
+                label: "Deutsch",
+                icon: 'fi fi-de',
+                command: () => {
+                    this.selectLanguage('de')
+                }
+            },
+            {
+                title: 'hu',
+                label: "Magyar",
+                icon: 'fi fi-hu',
+                command: () => {
+                    this.selectLanguage('hu')
+                }
+            }
+        ]
+    }
 
     get isDarkMode(): boolean {
         return this.layoutService.config().theme.includes("dark")
@@ -48,5 +86,7 @@ export class AppTopBarComponent{
         this.msalService.logoutRedirect();
     }
 
-
+    selectLanguage(selectedLanguage: string) {
+        this.selectedLanguage = this.languages.find( (language) => language.title == selectedLanguage )
+    }
 }

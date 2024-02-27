@@ -9,7 +9,8 @@
     </a>
 
 
-    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+    <div #topbarmenu class="layout-topbar-menu"  [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <p-splitButton [icon]="selectedLanguage.icon" styleClass="p-button-outlined p-button-secondary mr-2 mb-2" [model]="languages"></p-splitButton>
         <button pButton [pTooltip]="currentUser" tooltipPosition="bottom" class="p-link layout-topbar-button">
             <i class="pi pi-user"></i>
         </button>
