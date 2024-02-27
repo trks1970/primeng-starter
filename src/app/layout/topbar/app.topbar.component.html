@@ -1,0 +1,20 @@
+<div class="layout-topbar">
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <a class="layout-topbar-logo">
+        <img src="{{isDarkMode ? 'assets/images/crane_dark.svg' : 'assets/images/crane_light.svg'}}" alt="logo">
+        <span>{{environment.appDisplayName}}</span>
+    </a>
+
+
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <button pButton [pTooltip]="currentUser" tooltipPosition="bottom" class="p-link layout-topbar-button">
+            <i class="pi pi-user"></i>
+        </button>
+        <button class="p-link layout-topbar-button" (click)="logout()" *ngIf="isLoggedIn">
+            <i class="pi pi-power-off"></i>
+        </button>
+    </div>
+</div>

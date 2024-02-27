@@ -1,0 +1,25 @@
+openapi: "3.1.0"
+info:
+  title: JBox Standard Rest Error
+  version: "2.0-20240219"
+
+components:
+  responses:
+
+    ErrorResponse:
+      description: generic error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+
+  schemas:
+    ApiError:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        detail:
+          type: object

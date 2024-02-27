@@ -1,0 +1,48 @@
+openapi: 3.0.1
+info:
+  title: JBox Standard Base API
+  version: "2.0-20240219"
+servers:
+  - url: http://127.0.0.1:8080
+paths:
+  /version:
+    get:
+      tags:
+        - version
+      operationId: getVersion
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                $ref: "#/components/schemas/Version"
+        '400':
+          $ref: "./jbox_components_error.yaml#/components/responses/ErrorResponse"
+        '401':
+          $ref: "./jbox_components_error.yaml#/components/responses/ErrorResponse"
+        '403':
+          $ref: "./jbox_components_error.yaml#/components/responses/ErrorResponse"
+        '500':
+          $ref: "./jbox_components_error.yaml#/components/responses/ErrorResponse"
+
+components:
+
+  schemas:
+    Version:
+      type: object
+      properties:
+        major:
+          type: number
+          format: int32
+        minor:
+          type: number
+          format: int32
+        patch:
+            type: number
+            format: int32
+        build:
+            type: string
+
+
+

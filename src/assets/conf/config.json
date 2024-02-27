@@ -1,0 +1,6 @@
+{
+  "mappingServiceBaseUrl": "http://localhost:8080",
+  "clientId": "6698b888-cc28-42db-b6f2-7ad68f62c9f6",
+  "tenantId": "659c3a90-ec90-4772-b772-cebe2050a82e",
+  "redirectURI": "http://localhost:4200/"
+}
