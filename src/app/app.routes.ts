@@ -7,7 +7,7 @@ export const routes: Routes = [
     {
         path: '', component: AppLayoutComponent, canActivate: [MsalGuard],
         children: [
-            { path: '', loadComponent: () => import('./pages/landing/landing.component').then(c => c.LandingComponent), canActivate: [MsalGuard] },
+            { path: '', loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent), canActivate: [MsalGuard] },
             { path: 'takeoff', loadComponent: () => import('./pages/takeoff/take-off.component').then(c => c.TakeOffComponent), canActivate: [MsalGuard] },
         ]
     },

@@ -6,8 +6,9 @@ import {MsalService} from "@azure/msal-angular";
 import {ButtonModule} from "primeng/button";
 import {TooltipModule} from "primeng/tooltip";
 import {FormsModule} from "@angular/forms";
-import {MenuItem} from "primeng/api";
+import {MenuItem, PrimeNGConfig} from "primeng/api";
 import {SplitButtonModule} from "primeng/splitbutton";
+import {TranslocoService} from "@ngneat/transloco";
 
 @Component({
     selector: 'app-topbar',
@@ -31,7 +32,10 @@ export class AppTopBarComponent{
     selectedLanguage: MenuItem
 
     constructor(protected layoutService: LayoutService,
-                private msalService: MsalService,) {
+                private msalService: MsalService,
+                private primeNGConfig: PrimeNGConfig,
+                private translocoService: TranslocoService,) {
+
         this.selectedLanguage = {
                 title: 'en',
                 label: "English",
@@ -41,7 +45,6 @@ export class AppTopBarComponent{
                     this.selectLanguage('en')
                 }
             }
-
         this.languages = [
             this.selectedLanguage,
             {
@@ -59,7 +62,16 @@ export class AppTopBarComponent{
                 command: () => {
                     this.selectLanguage('hu')
                 }
+            },
+            {
+                title: 'al',
+                label: "Shqiptare",
+                icon: 'fi fi-al',
+                command: () => {
+                    this.selectLanguage('al')
+                }
             }
+
         ]
     }
 
@@ -88,5 +100,9 @@ export class AppTopBarComponent{
 
     selectLanguage(selectedLanguage: string) {
         this.selectedLanguage = this.languages.find( (language) => language.title == selectedLanguage )
+        this.translocoService.setActiveLang(selectedLanguage)
+        this.translocoService.selectTranslateObject("primeng").subscribe((res) =>
+            this.primeNGConfig.setTranslation(res)
+        )
     }
 }

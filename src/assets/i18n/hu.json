@@ -1,5 +1,12 @@
 {
-
+    "menu": {
+        "home": "Kezdőlap",
+        "takeoff": {
+            "header": "Felszállás",
+            "ignite": "Gyújtás"
+        }
+    },
+    "primeng": {
         "startsWith": "Ezzel kezdődik",
         "contains": "Tartalmazza",
         "notContains": "Nem tartalmazza",
@@ -30,11 +37,61 @@
         "cancel": "Mégsem",
         "completed": "Befejezve",
         "pending": "Függőben",
-        "dayNames": ["vasárnap", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat"],
-        "dayNamesShort": ["V", "H", "K", "Sze", "Cs", "P", "Szo"],
-        "dayNamesMin": ["V", "H", "K", "Sz", "Cs", "P", "Sz"],
-        "monthNames": ["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"],
-        "monthNamesShort": ["jan.", "febr.", "márc.", "ápr.", "máj.", "jún.", "júl.", "aug.", "szept.", "okt.", "nov.", "dec."],
+        "dayNames": [
+            "vasárnap",
+            "hétfő",
+            "kedd",
+            "szerda",
+            "csütörtök",
+            "péntek",
+            "szombat"
+        ],
+        "dayNamesShort": [
+            "V",
+            "H",
+            "K",
+            "Sze",
+            "Cs",
+            "P",
+            "Szo"
+        ],
+        "dayNamesMin": [
+            "V",
+            "H",
+            "K",
+            "Sz",
+            "Cs",
+            "P",
+            "Sz"
+        ],
+        "monthNames": [
+            "január",
+            "február",
+            "március",
+            "április",
+            "május",
+            "június",
+            "július",
+            "augusztus",
+            "szeptember",
+            "október",
+            "november",
+            "december"
+        ],
+        "monthNamesShort": [
+            "jan.",
+            "febr.",
+            "márc.",
+            "ápr.",
+            "máj.",
+            "jún.",
+            "júl.",
+            "aug.",
+            "szept.",
+            "okt.",
+            "nov.",
+            "dec."
+        ],
         "chooseYear": "Válassz évet",
         "chooseMonth": "Válassz hónapot",
         "chooseDate": "Válassz dátumot",
@@ -118,4 +175,5 @@
             "rotateRight": "Forgatás jobbra",
             "rotateLeft": "Forgatás balra"
         }
+    }
 }

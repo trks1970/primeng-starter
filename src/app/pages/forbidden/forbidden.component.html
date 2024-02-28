@@ -1,3 +1,4 @@
+<ng-container *transloco="let t;">
 <div class="flex card flex-column align-items-center justify-content-center gap-5 sm:p-8 h-screen">
     <div class="flex flex-column sm:flex-row align-items-center justify-content-center gap-3 text-primary">
         <span class="font-bold" style="font-size: 144px"> 4 </span>
@@ -6,6 +7,9 @@
         </div>
         <span class="font-bold" style="font-size: 144px"> 3 </span>
     </div>
-    <div class="font-bold text-900 text-center text-6xl border-top-1 surface-border pt-5">FORBIDDEN</div>
+    <div class="font-bold text-900 text-center text-6xl border-top-1 surface-border pt-5">
+        {{ t('error.forbidden') }}
+    </div>
     <p-button label="Go back to home" routerLink="/"></p-button>
 </div>
+</ng-container>

@@ -4,24 +4,28 @@ import {RouterOutlet} from "@angular/router";
 import {filter, Observable, Subject, takeUntil} from "rxjs";
 import {AuthenticationResult, EventMessage, EventType} from "@azure/msal-browser";
 import {MsalBroadcastService, MsalService} from "@azure/msal-angular";
+import {TranslocoService} from "@ngneat/transloco";
 
 @Component({
     selector: 'app-root',
     template: '<router-outlet></router-outlet>',
     standalone: true,
-    imports: [RouterOutlet],
-    providers: [PrimeNGConfig, MsalService]
+    imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit, OnDestroy {
     private readonly handleRedirect$: Observable<AuthenticationResult> = this.msalService.handleRedirectObservable()
     private readonly _destroying$ = new Subject<void>();
-    constructor(private primengConfig: PrimeNGConfig,
+    constructor(private primeNGConfig: PrimeNGConfig,
                 private msalService: MsalService,
                 private msalBroadcastService: MsalBroadcastService,
+                private translocoService: TranslocoService
                 ) { }
 
     ngOnInit() {
-        this.primengConfig.ripple = true;
+        this.primeNGConfig.ripple = true;
+        this.translocoService.selectTranslateObject("primeng").subscribe((res) =>
+            this.primeNGConfig.setTranslation(res)
+        )
         this.handleRedirect$.pipe(takeUntil(this._destroying$)).subscribe()
         this.msalBroadcastService.msalSubject$
         .pipe(

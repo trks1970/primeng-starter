@@ -1,9 +1,9 @@
 {
     "menu": {
-        "home": "Home",
+        "home": "Shtëpi",
         "takeoff": {
-            "header": "Takeoff",
-            "ignite": "Ignite"
+            "header": "Ngritje",
+            "ignite": "Ndez"
         }
     },
 
