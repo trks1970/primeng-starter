@@ -1,9 +1,14 @@
 {
-    "menu": {
-        "home": "Home",
-        "takeoff": {
-            "header": "Takeoff",
-            "ignite": "Ignite"
+    "base": {
+        "menu": {
+            "home": "Home"
+        }
+    },
+    "mapping": {
+        "menu": {
+            "header": "Mappings",
+            "table": "List",
+            "form": "Create"
         }
     },
 

@@ -19,10 +19,14 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+*.iml
 
 # Visual Studio Code
-.vscode
 .vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .history/*
 
 # Miscellaneous
@@ -30,6 +34,7 @@ yarn-error.log
 .sass-cache/
 /connect.lock
 /coverage
+/reports
 /libpeerconnection.log
 testem.log
 /typings
@@ -38,5 +43,9 @@ testem.log
 .DS_Store
 Thumbs.db
 
+/.scannerwork/.sonar_lock
+/check.json
+/.scannerwork/report-task.txt
 /generated/
-/openapitools.json
+/junit.xml
+/.scannerwork/

@@ -1,0 +1,11 @@
+# Ignore artifacts:
+dist
+generated
+helm
+node_modules
+openapi
+pipelines
+assets
+styles
+.vscode
+.angular

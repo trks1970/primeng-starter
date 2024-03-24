@@ -1,0 +1,22 @@
+{
+        "menu": {
+            "header": "Mappings",
+            "table": "List",
+            "form": "Create"
+        },
+        "delete": {
+            "message": "Do you want to delete this record?",
+            "confirmation": "Delete confirmation",
+            "confirmed": "Confirmed",
+            "deleted": "Mapping deleted"
+        },
+        "create": "Create mapping",
+        "from": "From",
+        "to": "To",
+        "fromClient": "from Client",
+        "toClient": "to Client",
+        "fromCustomer": "from Customer",
+        "toCustomer": "to Customer",
+        "role": "Role",
+        "distributionChannel": "Distribution channel"
+    }

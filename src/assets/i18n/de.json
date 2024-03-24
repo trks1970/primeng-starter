@@ -1,11 +1,17 @@
 {
-    "menu": {
-        "home": "Startseite",
-        "takeoff": {
-            "header": "Abheben",
-            "ignite": "Zündung"
+    "base": {
+        "menu": {
+            "home": "Startseite"
         }
     },
+    "mapping": {
+        "menu": {
+            "header": "Mappings",
+            "table": "Listen",
+            "form": "Erstellen"
+        }
+    },
+
     "primeng": {
         "startsWith": "Beginnt mit",
         "contains": "Enthält",

@@ -1,27 +1,42 @@
-# Sakai
+# MappingServiceFe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+
+### Configuration by environment
+
+Configuration can be injected by overwriting `./assets/config.json`. Extend [config.model.ts](src/app/config/config.model.ts) with additional configuration. The `isConfig` function should also be extended accordingly to ensure runtime validity. Also provide defaults for development via `defaultConfig` object and `./assets/config.json` file.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
+change any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component. You can also
+use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Connect to the arvato private feed
+
+See [Azure Artifacts](https://dev.azure.com/arvato-cim/Arvato%20One%20Customer%20ID/_artifacts/feed/arvato-private/connect/npm)
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## How to deploy
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use [pipeline](TODO:link to pipeline) or [Helm](#how-to-deploy-via-helm).
 
-## Running end-to-end tests
+### How to deploy via Helm
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Make sure to have connectivity to desired cluster. E.g. for share cluster you need a SHH connection
+   to `arvato-paas-test-bastion`)
+2. Run helm with desired values and namespace.
+   E.g. 
+```
+cd helm
+TEST: helm upgrade --install -f ../../mapping-service-infrastructure/applications/test/helm-values.yaml -n app-mediversems-test msfe .
+UAT: helm upgrade --install -f ../../mapping-service-infrastructure/applications/uat/helm-values.yaml -n app-mediversems-uat msfe .
+PROD: helm upgrade --install -f ../../mapping-service-infrastructure/applications/prod/helm-values.yaml -n app-mediversems-prod msfe .
+```

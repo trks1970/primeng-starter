@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:8080",
+  "clientId": "3016bc44-23d8-44e3-ae2f-3bc4f880d394",
+  "tenantId": "72e15514-5be9-46a8-8b0b-af9b1b77b3b8",
+  "redirectURI": "http://localhost:4200/"
+}

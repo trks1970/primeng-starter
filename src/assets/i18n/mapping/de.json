@@ -1,0 +1,18 @@
+{
+        "delete": {
+            "message": "Verbindung löschen?",
+            "confirmation": "Bestätigen",
+            "confirmed": "Bestätigt",
+            "deleted": "Verbindung gelöscht"
+        },
+        "create": "Mapping Erstellen",
+        "from": "Von",
+        "to": "Nach",
+        "fromClient": "von Mandant",
+        "toClient": "zu Mandant",
+        "fromCustomer": "von Kunde",
+        "toCustomer": "zu Kunde",
+        "role": "Rolle",
+        "distributionChannel": "Vertriebsweg"
+}
+

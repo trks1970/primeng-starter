@@ -1,0 +1,10 @@
+{
+    "request": "Please confirm, that you have updated the customer master data for the following customer",
+    "client": "Client:",
+    "customer-id": "Customer-ID:",
+    "role": "Role:",
+    "distribution-channel": "Distribution Channel:",
+    "message": "If you have not yet updated the customer master data, please do so BEFORE clicking the button",
+    "confirm": "Confirm"
+}
+

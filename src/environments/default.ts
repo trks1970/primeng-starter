@@ -1,4 +1,4 @@
 export const defaultEnvironment = {
-    appDisplayName: "AppDisplayName"
+  appDisplayName: 'AppDisplayName',
+  copyright: '© 2023 Arvato'
 }
-
